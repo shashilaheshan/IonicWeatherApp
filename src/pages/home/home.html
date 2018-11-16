@@ -1,14 +1,50 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title style="text-align: center">
+      Weather App  <ion-icon ios="ios-partly-sunny" md="md-partly-sunny"></ion-icon>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding class="master" style="text-align: center">
+  <ion-list class="master">
+      <ion-item style="text-align: center">
+          <img [src]="url">
+      </ion-item>
+      <ion-item>
+        <span>Location : </span><span style="float: right;">{{name}}</span>
+        </ion-item>
+        <ion-item>
+            <span>Region :</span> <span style="float: right;">{{region}}</span>
+          </ion-item>
+          <ion-item>
+              <span>Country :</span> <span style="float: right;">{{country}}</span>
+            </ion-item>
+            <ion-item>
+                <span>Lat&Lon :</span> <span style="float: right;">{{lat}},{{lon}}</span>
+              </ion-item>
+              <ion-item>
+                  <span>Localtime :</span> <span style="float: right;">{{time}}</span>
+                </ion-item>
+  </ion-list>
+  <ion-list class="master">
+      <ion-item>
+          <span>Temperature (C) : </span><span style="float: right;">{{temp_c}}</span>
+      </ion-item>
+          <ion-item>
+        
+            <span>Temperature (F) :</span> <span style="float: right;">{{temp_f}}</span>
+          </ion-item>
+          <ion-item>
+              <span>Humidity (F) : </span><span style="float: right;">{{humidity}}</span>
+            </ion-item>
+          
+ 
+  
+    <ion-item class="master" >
+        <ion-label floating >City</ion-label>
+        <ion-input type="text" style="color: aliceblue" [(ngModel)]="city"></ion-input>
+      </ion-item>
+      </ion-list>
+  <button ion-button color="primary" (click)="GetData()" > GET</button>
 </ion-content>
