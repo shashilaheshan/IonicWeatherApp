@@ -31,7 +31,7 @@ humidity:any="";
   }
         GetData(){
           if(this.city){
-            let url="http://api.apixu.com/v1/current.json?key=c612fb584fee4f7ea9f43145172512&q=";
+            let url="http://api.apixu.com/v1/current.json?key=your_api_key&q=";
             this.http.get(url+this.city).map(res => res.json()).subscribe(data => {
               
               this.current=data.current;
